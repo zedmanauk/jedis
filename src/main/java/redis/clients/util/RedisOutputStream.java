@@ -32,10 +32,10 @@ public final class RedisOutputStream extends FilterOutputStream {
     }
 
     public void write(final byte b) throws IOException {
-        buf[count++] = b;
         if (count == buf.length) {
             flushBuffer();
         }
+        buf[count++] = b;
     }
     
     public void write(final byte[] b) throws IOException {
